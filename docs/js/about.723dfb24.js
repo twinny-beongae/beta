@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunktwinny_beongae"]=self["webpackChunktwinny_beongae"]||[]).push([[443],{7381:function(n,e,t){t.r(e),t.d(e,{default:function(){return f}});var a=t(3396);const u={class:"about"},r=(0,a._)("h1",null,"This is an about page",-1),s=[r];function i(n,e){return(0,a.wg)(),(0,a.iD)("div",u,s)}var c=t(89);const o={},b=(0,c.Z)(o,[["render",i]]);var f=b}}]);
-//# sourceMappingURL=about.723dfb24.js.map

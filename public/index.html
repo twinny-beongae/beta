@@ -50,6 +50,18 @@
         console.log('Family Name: ' + responsePayload.family_name);
         console.log("Image URL: " + responsePayload.picture);
         console.log("Email: " + responsePayload.email);
+        console.log("exp: " + unixTimestampToDatetime(responsePayload.exp));
+      }
+
+      function unixTimestampToDatetime(t) {
+        var date = new Date(t*1000);
+        var year = date.getFullYear();
+        var month = "0" + (date.getMonth()+1);
+        var day = "0" + date.getDate();
+        var hour = "0" + date.getHours();
+        var minute = "0" + date.getMinutes();
+        var second = "0" + date.getSeconds();
+        return year + "-" + month.substr(-2) + "-" + day.substr(-2) + " " + hour.substr(-2) + ":" + minute.substr(-2) + ":" + second.substr(-2);
       }
      </script>
      <div id="continueWithGoogle"></div>
