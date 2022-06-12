@@ -9,14 +9,14 @@ import { initializeApp } from 'firebase/app'
 import { getDatabase, ref, onValue } from 'firebase/database'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAXzw2BNqhI6HJLFvDxGk8aFNnGEGz7ge0',
-  authDomain: 'twinny-beongae-ea0a4.firebaseapp.com',
+  apiKey: process.env.VUE_APP_FIREBASE_API_KET,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
   databaseURL: 'https://twinny-beongae-ea0a4-default-rtdb.firebaseio.com',
-  projectId: 'twinny-beongae-ea0a4',
-  storageBucket: 'twinny-beongae-ea0a4.appspot.com',
-  messagingSenderId: '82638857824',
-  appId: '1:82638857824:web:ef5ea88e03accb25bc4505',
-  measurementId: 'G-1FVMVDJYTB'
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID,
+  measurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID
 }
 
 const app = initializeApp(firebaseConfig)

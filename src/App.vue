@@ -7,6 +7,45 @@
   <router-view/>
 </template>
 
+<script>
+
+export default {
+  data () {
+    return {
+      token: localStorage.getItem('token')
+    }
+  },
+  methods: {
+    decodeJwtResponse (token) {
+      const base64Url = token.split('.')[1]
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/')
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
+      }).join(''))
+
+      return JSON.parse(jsonPayload)
+    },
+    isValidToken (token) {
+      if (token === null) return false
+      const responsePayload = this.decodeJwtResponse(token)
+      const exp = responsePayload.exp
+      const currentTime = (new Date()) / 1000
+      if (currentTime < exp) return true
+      else return false
+    }
+  },
+  mounted () {
+    console.log(this.token)
+    if (this.isValidToken(this.token)) {
+      this.$router.replace('/about')
+      localStorage.removeItem('token')
+    } else {
+      this.$router.replace('/')
+    }
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
