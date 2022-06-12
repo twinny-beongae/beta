@@ -3,7 +3,6 @@
     <img alt="Vue logo" src="../assets/twinny-beongae-logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
-  <div id="continueWithGoogle"></div>
 </template>
 
 <script>

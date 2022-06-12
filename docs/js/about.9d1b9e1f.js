@@ -1645,4 +1645,4 @@ function Sl(e){Ht(mt),dt(new K("database",((e,{instanceIdentifier:t})=>{const n=
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */gs.prototype.simpleListen=function(e,t){this.sendRequest("q",{p:e},t)},gs.prototype.echo=function(e,t){this.sendRequest("echo",{d:e},t)};Sl();const Nl={apiKey:"AIzaSyAXzw2BNqhI6HJLFvDxGk8aFNnGEGz7ge0",authDomain:"twinny-beongae-ea0a4.firebaseapp.com",databaseURL:"https://twinny-beongae-ea0a4-default-rtdb.firebaseio.com",projectId:"twinny-beongae-ea0a4",storageBucket:"twinny-beongae-ea0a4.appspot.com",messagingSenderId:"82638857824",appId:"1:82638857824:web:ef5ea88e03accb25bc4505",measurementId:"G-1FVMVDJYTB"},kl=yt(Nl),Rl=Tl(kl),Pl=dl(Rl,"rooms/room1/appointment_time");ml(Pl,(e=>{console.log(e.val())}));var xl={name:"AboutView",components:{},date(){return{appointmentTime:1}},methods:{}},Dl=n(89);const Al=(0,Dl.Z)(xl,[["render",a]]);var Ol=Al}}]);
-//# sourceMappingURL=about.0e59373f.js.map
+//# sourceMappingURL=about.9d1b9e1f.js.map
