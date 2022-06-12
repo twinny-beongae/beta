@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
+    <router-link to="/login">Login</router-link> |
     <router-link to="/event">Event</router-link>
   </nav>
   <router-view/>
@@ -37,10 +37,10 @@ export default {
   mounted () {
     console.log(this.token)
     if (this.isValidToken(this.token)) {
-      this.$router.replace('/about')
+      this.$router.replace('/')
       localStorage.removeItem('token')
     } else {
-      this.$router.replace('/')
+      this.$router.replace('/login')
     }
   }
 }
