@@ -2,11 +2,12 @@
   <div class="about">
     <h1>This is an about page</h1>
   </div>
+  <button @click="increaseAppointmentTime">update</button>
 </template>
 
 <script>
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, onValue } from 'firebase/database'
+import { getDatabase, ref, onValue, update } from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAXzw2BNqhI6HJLFvDxGk8aFNnGEGz7ge0',
@@ -23,15 +24,26 @@ const app = initializeApp(firebaseConfig)
 
 // Get a reference to the database service
 const db = getDatabase(app)
-const appointmentTime = ref(db, 'rooms/' + 'room1' + '/appointment_time')
-onValue(appointmentTime, (snapshot) => {
-  const data = snapshot.val()
-  console.log(data)
+const appointmentTimeRef = ref(db, 'rooms/' + 'room1' + '/appointment_time')
+onValue(appointmentTimeRef, (snapshot) => {
+  console.log(snapshot.val())
 })
 
 export default {
   name: 'AboutView',
   components: {
+  },
+  date () {
+    return {
+      appointmentTime: 1
+    }
+  },
+  methods: {
+    increaseAppointmentTime () {
+      const updates = {}
+      updates['/rooms/room1/appointment_time'] = 123456
+      update(ref(db), updates)
+    }
   }
 }
 </script>
