@@ -46,7 +46,7 @@
         console.log('exp: ' + unixTimestampToDatetime(responsePayload.exp))
 
         localStorage.setItem('token', response.credential)
-        location.reload()
+        location.replace('https://twinny-beongae.github.io/beta/')
       }
 
       function decodeJwtResponse (token) {
