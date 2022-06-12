@@ -1,4 +1,4 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/beta/favicon.ico"><title>twinny-beongae</title><script defer="defer" src="/beta/js/chunk-vendors.c0f446b9.js"></script><script defer="defer" src="/beta/js/app.d8aaa835.js"></script><link href="/beta/css/app.630a3175.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but twinny-beongae doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="https://accounts.google.com/gsi/client" async defer="defer"></script><script>window.onload = function () {
+<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/beta/favicon.ico"><title>twinny-beongae</title><script defer="defer" src="/beta/js/chunk-vendors.c0f446b9.js"></script><script defer="defer" src="/beta/js/app.dafc3b7a.js"></script><link href="/beta/css/app.630a3175.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but twinny-beongae doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="https://accounts.google.com/gsi/client" async defer="defer"></script><script>window.onload = function () {
         google.accounts.id.initialize({
           client_id: "489460935027-4fn4a3g3aso3rjsj4rpmoakksrcjtlpt.apps.googleusercontent.com",
           callback: handleCredentialResponse
@@ -23,6 +23,8 @@
         console.log('Image URL: ' + responsePayload.picture)
         console.log('Email: ' + responsePayload.email)
         console.log('exp: ' + unixTimestampToDatetime(responsePayload.exp))
+
+        location.replace('about')
       }
 
       function decodeJwtResponse (token) {

@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktwinny_beongae"]=self["webpackChunktwinny_beongae"]||[]).push([[963],{6081:function(n,e,t){t.r(e),t.d(e,{default:function(){return l}});var u=t(3396);const r=(0,u._)("h4",null,"Event",-1),a=[r];function c(n,e,t,r,c,i){return(0,u.wg)(),(0,u.iD)("div",null,a)}var i={name:"EventView",components:{}},o=t(89);const s=(0,o.Z)(i,[["render",c]]);var l=s}}]);
+//# sourceMappingURL=event.b12b8374.js.map
