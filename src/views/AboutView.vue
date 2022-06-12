@@ -2,12 +2,11 @@
   <div class="about">
     <h1>This is an about page</h1>
   </div>
-  <button @click="increaseAppointmentTime">update</button>
 </template>
 
 <script>
 import { initializeApp } from 'firebase/app'
-import { getDatabase, ref, onValue, update } from 'firebase/database'
+import { getDatabase, ref, onValue } from 'firebase/database'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAXzw2BNqhI6HJLFvDxGk8aFNnGEGz7ge0',
@@ -39,11 +38,6 @@ export default {
     }
   },
   methods: {
-    increaseAppointmentTime () {
-      const updates = {}
-      updates['/rooms/room1/appointment_time'] = 123456
-      update(ref(db), updates)
-    }
   }
 }
 </script>
