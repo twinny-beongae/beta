@@ -38,7 +38,7 @@ export default {
     console.log(this.token)
     if (this.isValidToken(this.token)) {
       this.$router.replace('/')
-      localStorage.removeItem('token')
+      // localStorage.removeItem('token')
     } else {
       this.$router.replace('/login')
     }

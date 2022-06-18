@@ -1,6 +1,19 @@
 <template>
-  <div class="home">
-    <h1>This is an home page</h1>
+  <div class="top">
+    <img alt="Twinny Beongae logo" src="../assets/twinny-beongae-logo.png" width="38">
+    <img alt="Twinny Beongae logo" src="../assets/account-icon.svg" width="38">
+  </div>
+  <div class="tap">
+    <h4>탭 메뉴</h4>
+  </div>
+  <div>
+    <select v-model="selectedGoal">
+      <option value="pingpong">탁구</option>
+      <option value="basketball">농구</option>
+    </select>
+  </div>
+  <div>
+    <button @click="searchBeongae(selectedGoal)">찾기</button>
   </div>
 </template>
 
@@ -32,12 +45,43 @@ export default {
   name: 'HomeView',
   components: {
   },
-  date () {
+  data () {
     return {
-      appointmentTime: 1
+      appointmentTime: 1,
+      goals: [
+        {
+          value: 'pingpong',
+          name: '탁구',
+          image: '../assets/pingpong.png'
+        },
+        {
+          value: 'basketball',
+          name: '농구',
+          image: '../assets/basketball.png'
+        }
+      ],
+      selectedGoal: 'pingpong'
     }
   },
   methods: {
+    searchBeongae (goal) {
+      let beongae = null
+      beongae = this.getBeongae(goal)
+
+      if (beongae == null) {
+        beongae = this.makeBeongae(goal)
+        this.$router.push({ name: 'beongae', params: { id: 123 } })
+      } else {
+        // this.$router.push('/beongae')
+      }
+    },
+    getBeongae (goal) {
+      console.log(`get beongae ${goal}`)
+      // return {}
+    },
+    makeBeongae (goal) {
+      console.log(`make beongae ${goal}`)
+    }
   }
 }
 </script>
